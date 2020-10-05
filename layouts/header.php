@@ -1,4 +1,4 @@
-<?php  include("valida.php");  ?>
+<?php  include("scripts/valida.php");  ?>
 <!doctype html>
 <html lang="en">
     <head>

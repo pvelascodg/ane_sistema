@@ -16,7 +16,7 @@
                                         <img src="public/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                                        <a class="dropdown-item" href="perfil.php"><i class="dripicons-user text-muted"></i> Perfil</a>
+                                        <a class="dropdown-item" href="profile.php"><i class="dripicons-user text-muted"></i> Perfil</a>
                                         
                                         <a class="dropdown-item" href="logout.php"><i class="dripicons-exit text-muted"></i> Salir</a>
                                     </div>

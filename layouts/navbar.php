@@ -1,20 +1,20 @@
    <!-- ========== Left Sidebar Start ========== -->
    <div class="left side-menu">
 
-<!-- LOGO -->
-<div class="topbar-left">
-    <div class="">
-       <a href="index.php" class="logo text-center" style="color: #fff;    font-size: 30px;    font-weight: 700;"><img src="ANE_LOGO_BLANCO.png" height="60"></a>
-        
-    </div>
-</div>
+       <!-- LOGO -->
+       <div class="topbar-left">
+           <div class="">
+               <a href="index.php" class="logo text-center" style="color: #fff;    font-size: 30px;    font-weight: 700;"><img src="ANE_LOGO_BLANCO.png" height="60"></a>
 
-<div class="sidebar-inner slimscrollleft">
-    <div id="sidebar-menu">
-        <ul>
-            <li class="menu-title">Bienvenid@ <?php echo $usuario; ?></li>
+           </div>
+       </div>
 
-            <!--<li class="has_sub">
+       <div class="sidebar-inner slimscrollleft">
+           <div id="sidebar-menu">
+               <ul>
+                   <li class="menu-title">Bienvenid@ <?php echo $usuario['first_name']; ?></li>
+
+                   <!--<li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-view-dashboard"></i> <span> Escritorio <span class="badge badge-pill badge-primary pull-right">20+</span></span> </a>
                 <ul class="list-unstyled">
                     <li><a href="index.php">Dashboard One</a></li>
@@ -22,43 +22,46 @@
                 </ul>
             </li>-->
 
-            <li>
-                <a href="dashboard.php" class="waves-effect"><i class="mdi mdi-cube-outline"></i><span> Escritorio </span></a>
-            </li>
-			
-            <li class="has_sub">
-                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span> Ind. Productividad  <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                <ul class="list-unstyled">
-                    <li><a href="form-elements.php">Vis a Vis</a></li>
-                    <li><a href="referencias.php">Dar una referencia</a></li>
-                    <li><a href="negocios.php">Gracias por negocio concretado</a></li>
-					<li><a href="invitados.php">Registrar un posible visitante</a></li>
-                </ul>
-            </li>
-			<?php if($type == 1 || $type == 0){ ?>		
-			<li class="has_sub">
-                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-text"></i><span> Reportes <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                <ul class="list-unstyled">
-                    <li><a href="lista-vis.php">Reporte Vis a Vis</a></li>
-                    <li><a href="lista-referencias.php">Reporte Dar una referencia</a></li>
-                    <li><a href="lista-negocios.php">Reporte Gracias por negocio concretado</a></li>
-					<li><a href="lista-invitados.php">Reporte Registrar un posible visitante</a></li>
-					<li><a href="miembros.php">Lista de miembros</a></li>
-                </ul>
-            </li>
-			<?php }if($type == 0){  ?>		
-			<li class="has_sub">
-                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-text"></i><span> Miembros <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                <ul class="list-unstyled">
-					<li><a href="lista-registro.php">Convertir Visitante-Miembro</a></li>
-                    <li><a href="miembro.php">Agregar miembro</a></li>
-					<li><a href="lista-miembros.php">Lista de miembros</a></li>
-                   
-                   
-                </ul>
-            </li>
-			<?php } ?>	
-           <!-- <li>
+                   <li>
+                       <a href="dashboard.php" class="waves-effect"><i class="mdi mdi-cube-outline"></i><span> Escritorio </span></a>
+                   </li>
+
+                   <li class="has_sub">
+                       <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span> Ind. Productividad <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                       <ul class="list-unstyled">
+                           <li><a href="vis.php">Registrar un Vis a Vis</a></li>
+                           <li><a href="referencias.php">Dar una referencia</a></li>
+                           <li><a href="negocios.php">Dar gracias por negocio cerrado</a></li>
+                           <li><a href="invitados.php">Registrar un posible visitante</a></li>
+                       </ul>
+                   </li>
+                   <?php if ($usuario['type'] == 1 || $usuario['type'] == 0) { ?>
+                       <li class="has_sub">
+                           <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-text"></i><span> Reportes <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                           <ul class="list-unstyled">
+                               <li><a href="report-vis.php">Vis a Vis</a></li>
+                               <li><a href="report-referencia.php">Referencias</a></li>
+                               <li><a href="report-negocio.php">GPNC</a></li>
+                               <li><a href="report-invitado.php">Visitantes</a></li>
+                               <li><a href="miembros.php">Miembros ANE</a></li>
+                           </ul>
+                       </li>
+                   <?php }
+                    if ($usuario['type'] == 0) {  ?>
+                       <li class="has_sub">
+                           <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-cog"></i><span> Configuración <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                           <ul class="list-unstyled">
+                               <li><a href="agregar-giro.php">Administrar Giros</a></li>
+                               <li><a href="agregar-espec.php">Administrar Especialidades</a></li>
+                               <li><a href="convert-to-member.php">Convertir Visitante-Miembro</a></li>
+                               <li><a href="miembro.php">Agregar miembro</a></li>
+                               <li><a href="lista-miembros.php">Lista de miembros</a></li>
+
+
+                           </ul>
+                       </li>
+                   <?php } ?>
+                   <!-- <li>
                 <a href="calendar.php" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Calendar </span></a>
             </li>
 
@@ -158,12 +161,16 @@
             </li>
 
             <li class="menu-title">Extras</li>-->
-			 <li>
-                <a href="perfil.php" class="waves-effect"><i class="mdi mdi-account-location"></i><span> Perfil de usuario </span></a>
-            </li>
-			
+                   <li>
+                       <a href="profile.php" class="waves-effect"><i class="mdi mdi-account-location"></i><span>Mi Perfil</span></a>
+                   </li>
 
-           <!-- <li class="has_sub">
+                   <li>
+                       <a href="calendario.php" class="waves-effect"><i class="mdi mdi-calendar"></i><span>Calendario</span></a>
+                   </li>
+
+
+                   <!-- <li class="has_sub">
                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-location"></i><span> Perfil <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                 <ul class="list-unstyled">
                     <li><a href="pages-login.php">Login</a></li>
@@ -231,9 +238,9 @@
                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-file-document-box"></i><span> Documentation </span></a>
             </li>-->
 
-        </ul>
-    </div>
-    <div class="clearfix"></div>
-</div> <!-- end sidebarinner -->
-</div>
-<!-- Left Sidebar End -->
+               </ul>
+           </div>
+           <div class="clearfix"></div>
+       </div> <!-- end sidebarinner -->
+   </div>
+   <!-- Left Sidebar End -->
